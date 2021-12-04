@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body onload="loadDoc()">
+
+
+
+    
+
+
+    <table border="1">
+        <tr>
+            <td id="id">Id</td>
+            <td id="p_name">Product name</td>
+            <td id="p_code">Product code </td>
+            <td id="p_category">Product category</td>
+            <td id="p_price">Product price</td>
+            <td id="p_rating">Product rating</td>
+
+        </tr>
+        <tr>
+            <td id="p1_id">Id</td>
+            <td id="p1_p_name">Product name</td>
+            <td id="p1_p_code">Product code </td>
+            <td id="p1_p_category">Product category</td>
+            <td id="p1_p_price">Product price</td>
+            <td id="p1_p_rating">Product rating</td>
+
+        </tr>
+        <tr>
+            <td id="p2_id">Id</td>
+            <td id="p2_p_name">Product name</td>
+            <td id="p2_p_code">Product code </td>
+            <td id="p2_p_category">Product category</td>
+            <td id="p2_p_price">Product price</td>
+            <td id="p2_p_rating">Product rating</td>
+
+        </tr>
+        <tr>
+            <td id="p3_id">Id</td>
+            <td id="p3_p_name">Product name</td>
+            <td id="p3_p_code">Product code </td>
+            <td id="p3_p_category">Product category</td>
+            <td id="p3_p_price">Product price</td>
+            <td id="p3_p_rating">Product rating</td>
+
+        </tr>
+        <tr>
+            <td id="p4_id">Id</td>
+            <td id="p4_p_name">Product name</td>
+            <td id="p4_p_code">Product code </td>
+            <td id="p4_p_category">Product category</td>
+            <td id="p4_p_price">Product price</td>
+            <td id="p4_p_rating">Product rating</td>
+
+        </tr>
+        <tr>
+            <td id="p5_id">Id</td>
+            <td id="p5_p_name">Product name</td>
+            <td id="p5_p_code">Product code </td>
+            <td id="p5_p_category">Product category</td>
+            <td id="p5_p_price">Product price</td>
+            <td id="p5_p_rating">Product rating</td>
+
+        </tr>
+
+    </table>
+
+
+</body>
+<script>
+    function loadDoc() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let obj_arr = JSON.parse(this.responseText);
+
+
+                document.getElementById("p1_id").innerHTML = obj_arr[0].id;
+                document.getElementById("p1_p_name").innerHTML = obj_arr[0].p_name;
+                document.getElementById("p1_p_code").innerHTML = obj_arr[0].p_code;
+                document.getElementById("p1_p_category").innerHTML = obj_arr[0].p_category;
+                document.getElementById("p1_p_price").innerHTML = obj_arr[0].p_price;
+                document.getElementById("p1_p_rating").innerHTML = obj_arr[0].p_rating;
+
+                document.getElementById("p2_id").innerHTML = obj_arr[1].id;
+                document.getElementById("p2_p_name").innerHTML = obj_arr[1].p_name;
+                document.getElementById("p2_p_code").innerHTML = obj_arr[1].p_code;
+                document.getElementById("p2_p_category").innerHTML = obj_arr[1].p_category;
+                document.getElementById("p2_p_price").innerHTML = obj_arr[1].p_price;
+                document.getElementById("p2_p_rating").innerHTML = obj_arr[1].p_rating;
+
+                document.getElementById("p3_id").innerHTML = obj_arr[2].id;
+                document.getElementById("p3_p_name").innerHTML = obj_arr[2].p_name;
+                document.getElementById("p3_p_code").innerHTML = obj_arr[2].p_code;
+                document.getElementById("p3_p_category").innerHTML = obj_arr[2].p_category;
+                document.getElementById("p3_p_price").innerHTML = obj_arr[2].p_price;
+                document.getElementById("p3_p_rating").innerHTML = obj_arr[2].p_rating;
+
+                document.getElementById("p4_id").innerHTML = obj_arr[3].id;
+                document.getElementById("p4_p_name").innerHTML = obj_arr[3].p_name;
+                document.getElementById("p4_p_code").innerHTML = obj_arr[3].p_code;
+                document.getElementById("p4_p_category").innerHTML = obj_arr[3].p_category;
+                document.getElementById("p4_p_price").innerHTML = obj_arr[3].p_price;
+                document.getElementById("p4_p_rating").innerHTML = obj_arr[3].p_rating;
+
+                document.getElementById("p5_id").innerHTML = obj_arr[4].id;
+                document.getElementById("p5_p_name").innerHTML = obj_arr[4].p_name;
+                document.getElementById("p5_p_code").innerHTML = obj_arr[4].p_code;
+                document.getElementById("p5_p_category").innerHTML = obj_arr[4].p_category;
+                document.getElementById("p5_p_price").innerHTML = obj_arr[4].p_price;
+                document.getElementById("p5_p_rating").innerHTML = obj_arr[4].p_rating;
+            }
+        };
+
+        xhttp.open("GET", "http://127.0.0.1:8000/api/products/list");
+        xhttp.send();
+    }
+
+</script>
+
+</html>
